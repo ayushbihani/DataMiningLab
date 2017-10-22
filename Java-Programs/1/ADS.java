@@ -39,12 +39,15 @@ class ADS
 
     public void discretize()
     {
+        System.out.println("Please enter the number of bins for discretization of Age and column number");
+        bins = sc.nextInt();
+        int cno = sc.nextInt();
         int maxAge = Integer.MIN_VALUE;
         int minAge = Integer.MAX_VALUE;
         for(int i =0;i<data.size();i++)
         {
             String[] row = data.get(i);
-            int age = Integer.parseInt(row[3]);
+            int age = Integer.parseInt(row[cno]);
             if(age>maxAge)
             {
                 maxAge=age;
@@ -60,17 +63,27 @@ class ADS
         int binsize = diff/bins;
         int binCount = 1;
         int temp = minAge;
+        System.out.println("Categorical Attributes for Age are");
+        while(temp<maxAge)
+        {
+            System.out.println(temp+"-"+(temp+binsize)+"->"+ binCount);
+            temp+=binsize;
+            binCount++;
+        }
+        temp = minAge;
+        binCount=1;
+
         for(int i=0;i<data.size();i++)
         {
             String[] row = data.get(i);
 
-            int age = Integer.parseInt(row[3]);  
+            int age = Integer.parseInt(row[cno]);  
             while(age>(temp+binsize))
             {
                 binCount++;
                 temp+=binsize;
             }
-            data.get(i)[3] = String.valueOf(binCount);
+            data.get(i)[cno] = String.valueOf(binCount);
             for(int j=0;j<row.length;j++)
             {
                 System.out.print(row[j]+", ");
@@ -87,8 +100,6 @@ class ADS
         column = reader.returnColumns();
         System.out.println("Data Format");
         reader.printCsv();
-        System.out.println("Please enter the number of bins for discretization of Age");
-        bins = sc.nextInt();
         ADS ads = new ADS();
         ads.discretize();
         ads.aggregate();
