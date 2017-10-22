@@ -39,7 +39,7 @@ class ADS
 
     public void discretize()
     {
-        System.out.println("Please enter the number of bins for discretization of Age and column number");
+        System.out.println("Please enter the number of bins for discretization and column number");
         bins = sc.nextInt();
         int cno = sc.nextInt();
         int maxAge = Integer.MIN_VALUE;
@@ -63,7 +63,7 @@ class ADS
         int binsize = diff/bins;
         int binCount = 1;
         int temp = minAge;
-        System.out.println("Categorical Attributes for Age are");
+        System.out.println("Categorical Attributes are");
         while(temp<maxAge)
         {
             System.out.println(temp+"-"+(temp+binsize)+"->"+ binCount);
