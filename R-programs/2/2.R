@@ -17,8 +17,8 @@ print(details)
 
 #Simple Data Visualization
 #histoitgram of Salary
-hist(newData$Salary)
-hist(newData$Performace)
+hist(dataInput$Salary)
+hist(dataInput$Performace)
 
 #PieChart of departments
 depts = array(unique(dataInput$Department,incomparables=FALSE))
