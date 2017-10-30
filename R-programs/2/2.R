@@ -28,8 +28,8 @@ pie(deptTable,main="Departments",labels = piePercent)
 legend("topleft",depts)
 
 #scatter plot
-yrange<- newData$Salary
-xrange<- newData$Performance
+yrange<- dataInput$Salary
+xrange<- dataInput$Performance
 plot(xrange, yrange,xlab="Performance",ylab="Salary")
 title("performace vs salary plot")
 
