@@ -1,7 +1,6 @@
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.*;
-
 class Frequent
 {
     static double support;
@@ -23,7 +22,6 @@ class Frequent
         //reader.printCsv();
         noOfTransactions = AllItemSets.size(); 
     } 
-
     public ArrayList<HashSet<String>> powerSet(String[] itemset)
     {
         ArrayList<HashSet<String>> set = new ArrayList<>();
@@ -42,7 +40,6 @@ class Frequent
         }
         return set;
     }
- 
     @SuppressWarnings("unchecked")
     public void generate(HashSet<String> set)
     {
@@ -52,40 +49,30 @@ class Frequent
         {
             HashSet<String> x = newItems.get(i);
             double supportX = countSupport(x);
-            System.out.println(supportX +" "+supportY);
             if(supportX >= support && supportY >=support)
             {
                double confidenceScore = getConfidence(supportY, supportX);   
                if(confidenceScore > confidence)
                {
-                Iterator it = x.iterator();    
+                Iterator it = x.iterator();
+                System.out.print("{");    
                 while(it.hasNext())
                 {
                     System.out.print(it.next()+",");
                 }
-                System.out.print("->");
+                System.out.print("}->{");
                 Iterator it2 = set.iterator();
                 while(it2.hasNext())
                 {
-                   String temp = it.next();
+                   String temp = it2.next().toString();
                    if(!x.contains(temp))
                    System.out.print(temp+","); 
                 }
-                System.out.print("\t"+supportX +"\t"+ supportY+"\t"+confidence);
+                System.out.print("}"+"\t"+supportX +"\t"+ supportY+"\t"+confidenceScore);
                 System.out.println();
                }
             }
         }
-    }
-
-    public void printHashset(HashSet<String> set)
-    {
-        Iterator it = set.iterator();
-        while(it.hasNext())
-        {
-            System.out.print(it.next()+",");
-        }
-        System.out.println();
     }
     @SuppressWarnings("unchecked")
     public double countSupport(HashSet<String> itemset){
@@ -103,19 +90,6 @@ class Frequent
         return (support1/support2);
     }
 
-    public void printPowerSet(ArrayList<HashSet<String>> set)
-    {
-        for(int i =0;i<set.size();i++)
-        {
-            HashSet<String> temp = set.get(i);
-            Iterator iterator = temp.iterator();
-            while(iterator.hasNext())
-            {
-                System.out.print(iterator.next()+", ");
-            }
-            System.out.println(); 
-        }
-    }
     @SuppressWarnings("unchecked")
     public void rules(ArrayList<HashSet<String>> set)
     {
@@ -124,11 +98,6 @@ class Frequent
             if(x.size()>=2)
             {
                 Iterator it =x.iterator();
-                while(it.hasNext())
-                {
-                    System.out.print(it.next()+",");
-                }
-                System.out.println();
                 generate(x);
             }
         }

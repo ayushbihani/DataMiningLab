@@ -1,8 +1,8 @@
 Diaper,Milk,Beer,Cookies,Butter
-Diaper,Milk,,,
-Beer,Butter,Bread,,
-Butter,Bread,,,
-Diaper,Beer,,,
-Cookies,Butter,,,
-Diaper,Milk,Butter,Cookies,
-Beer,Diaper,,,
+Diaper,Milk
+Beer,Butter,Bread
+Butter,Bread
+Diaper,Beer
+Cookies,Butter
+Diaper,Milk,Butter,Cookies
+Beer,Diaper

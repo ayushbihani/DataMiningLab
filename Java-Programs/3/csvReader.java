@@ -10,7 +10,6 @@ public class csvReader {
 	String dilimiter;
 	ArrayList<HashSet<String>> data;
 	BufferedReader br;
-    int labels = 1;
     ArrayList<String> column;
 	csvReader(String fileName,String dilimiter) throws IOException{
 		this.fileName = fileName;
