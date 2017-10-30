@@ -6,7 +6,6 @@ class ADS
 {
     static ArrayList<String[]> data;
     static ArrayList<String> column;
-    ArrayList<String[]> newData;
     static int bins;
     static Scanner sc = new Scanner(System.in);
    

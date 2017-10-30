@@ -7,12 +7,12 @@ print(names(dataInput))
 print(summary(dataInput))
 str(dataInput)
 #Get only specific coolumns
-newData<-data.frame(dataInput$name,dataInput$Salary)
+newData<-data.frame(dataInput$name,dataInput$Salary,dataInput$Performace)
 print(newData)
 #get max salary of employee
-maxSalary<- max(data$Salary)
+maxSalary<- max(dataInput$Salary)
 print(maxSalary)
-details<- subset(data,Salary = maxSalary)
+details<- subset(dataInput,Salary = maxSalary)
 print(details)
 
 #Simple Data Visualization
