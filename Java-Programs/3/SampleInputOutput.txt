@@ -1,0 +1,52 @@
+#Example Input
+Enter the 4 frequent itemset
+
+Diaper
+Milk
+Butter
+Cookies
+
+Enter support and confidence thresholds
+2
+0.4
+
+#Output
+
+{Diaper,}->{Milk,}      5.0     3.0     0.6
+{Milk,}->{Diaper,}      3.0     3.0     1.0
+{Milk,}->{Butter,}      3.0     2.0     0.6666666666666666
+{Butter,Diaper,}->{Milk,}       2.0     2.0     1.0
+{Milk,}->{Butter,Diaper,}       3.0     2.0     0.6666666666666666
+{Butter,Milk,}->{Diaper,}       2.0     2.0     1.0
+{Diaper,Milk,}->{Butter,}       3.0     2.0     0.6666666666666666
+{Cookies,}->{Diaper,}   3.0     2.0     0.6666666666666666
+{Cookies,}->{Milk,}     3.0     2.0     0.6666666666666666
+{Milk,}->{Cookies,}     3.0     2.0     0.6666666666666666
+{Cookies,}->{Diaper,Milk,}      3.0     2.0     0.6666666666666666
+{Cookies,Diaper,}->{Milk,}      2.0     2.0     1.0
+{Milk,}->{Cookies,Diaper,}      3.0     2.0     0.6666666666666666
+{Cookies,Milk,}->{Diaper,}      2.0     2.0     1.0
+{Diaper,Milk,}->{Cookies,}      3.0     2.0     0.6666666666666666
+{Cookies,}->{Butter,}   3.0     3.0     1.0
+{Butter,}->{Cookies,}   5.0     3.0     0.6
+{Cookies,}->{Butter,Diaper,}    3.0     2.0     0.6666666666666666
+{Cookies,Butter,}->{Diaper,}    3.0     2.0     0.6666666666666666
+{Cookies,Diaper,}->{Butter,}    2.0     2.0     1.0
+{Butter,Diaper,}->{Cookies,}    2.0     2.0     1.0
+{Cookies,}->{Butter,Milk,}      3.0     2.0     0.6666666666666666
+{Cookies,Butter,}->{Milk,}      3.0     2.0     0.6666666666666666
+{Milk,}->{Cookies,Butter,}      3.0     2.0     0.6666666666666666
+{Cookies,Milk,}->{Butter,}      2.0     2.0     1.0
+{Butter,Milk,}->{Cookies,}      2.0     2.0     1.0
+{Cookies,}->{Butter,Diaper,Milk,}       3.0     2.0     0.6666666666666666
+{Cookies,Butter,}->{Diaper,Milk,}       3.0     2.0     0.6666666666666666
+{Cookies,Diaper,}->{Butter,Milk,}       2.0     2.0     1.0
+{Butter,Diaper,}->{Cookies,Milk,}       2.0     2.0     1.0
+{Cookies,Butter,Diaper,}->{Milk,}       2.0     2.0     1.0
+{Milk,}->{Cookies,Butter,Diaper,}       3.0     2.0     0.6666666666666666
+{Cookies,Milk,}->{Butter,Diaper,}       2.0     2.0     1.0
+{Butter,Milk,}->{Cookies,Diaper,}       2.0     2.0     1.0
+{Cookies,Butter,Milk,}->{Diaper,}       2.0     2.0     1.0
+{Diaper,Milk,}->{Cookies,Butter,}       3.0     2.0     0.6666666666666666
+{Cookies,Diaper,Milk,}->{Butter,}       2.0     2.0     1.0
+{Butter,Diaper,Milk,}->{Cookies,}       2.0     2.0     1.0

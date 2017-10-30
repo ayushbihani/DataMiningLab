@@ -19,7 +19,6 @@ class Frequent
         powerset = new ArrayList<>();
         csvReader reader= new csvReader("input.csv",",");
         AllItemSets = reader.returnData();
-        //reader.printCsv();
         noOfTransactions = AllItemSets.size(); 
     } 
     public ArrayList<HashSet<String>> powerSet(String[] itemset)
@@ -116,7 +115,6 @@ class Frequent
         f.support = sc.nextDouble();
         f.confidence = sc.nextDouble();
         f.powerset=f.powerSet(freqItemset);
-        //f.printPowerSet(f.powerset);
         f.rules(f.powerset);
     }
 }
