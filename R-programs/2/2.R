@@ -7,7 +7,7 @@ print(names(dataInput))
 print(summary(dataInput))
 str(dataInput)
 #Get only specific coolumns
-newData<-data.frame(dataInput$name,dataInput$Salary,dataInput$Performace)
+newData<-data.frame(dataInput$name,dataInput$Salary,dataInput$Performance)
 print(newData)
 #get max salary of employee
 maxSalary<- max(dataInput$Salary)
