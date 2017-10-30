@@ -8,18 +8,14 @@ class Frequent
     static ArrayList<HashSet<String>> powerset;
     static ArrayList<HashSet<String>> AllItemSets;
     static Scanner sc = new Scanner(System.in);
-    static HashMap<String,Integer> items;
-    static int noOfTransactions;
     static String[] freqItemset;
     Frequent()throws IOException
     {
         AllItemSets = new ArrayList<>();
-        items = new HashMap<>();
         freqItemset = new String[4];
         powerset = new ArrayList<>();
         csvReader reader= new csvReader("input.csv",",");
         AllItemSets = reader.returnData();
-        noOfTransactions = AllItemSets.size(); 
     } 
     public ArrayList<HashSet<String>> powerSet(String[] itemset)
     {
