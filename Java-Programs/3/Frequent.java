@@ -45,7 +45,7 @@ class Frequent
             HashSet<String> x = newItems.get(i);
             double supportX = countSupport(x);
             if(supportX >= support && supportY >=support)
-            {
+            {                                                                                     
                double confidenceScore = getConfidence(supportY, supportX);   
                if(confidenceScore > confidence)
                {
