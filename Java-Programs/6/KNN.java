@@ -14,7 +14,7 @@ class KNN
     {
         int length = first.length;
         double distance = 0;
-        for(int i =0 ;i< length;i++)
+        for(int i =0 ;i< length-1;i++)
         {
             distance += Math.pow((first[i]-second[i]),2);
         }
@@ -75,7 +75,7 @@ class KNN
         csvReader reader = new csvReader("input.txt", ",");
         KNN knn = new KNN();
         knn.featureDataset = reader.returnData();
-        double[] arr ={6.0,3.5,4.1,1};
+        double[] arr ={6.0,3.5,4.1};
         System.out.println(knn.getPrediction(arr));
     }
 }
