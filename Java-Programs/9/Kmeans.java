@@ -104,17 +104,7 @@ class Kmeans
     public void predict(double[] test)
     {
         ArrayList<Double> distances = findDistanceFromAllCentroid(test);
-        double min = 32767;
-        int index =-1;
-        for(int i=0;i<k;i++)
-        {
-            if(distances.get(i)<min)
-            {
-                index = i;
-                min = distances.get(i);
-            }
-        }
-        System.out.println("Datapoint belongs to cluster:"+index);
+        System.out.println("Datapoint belongs to cluster:"+findCluster(distances));
     }
     public static void main(String[] args)throws IOException
     {
